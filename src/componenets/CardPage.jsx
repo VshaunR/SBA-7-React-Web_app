@@ -5,16 +5,19 @@ export default function CardPage(){
  
   const {id} = useParams()
  console.log(id)
- const [ship,setShip]=useState({})
+ const [ship,setShip]=useState({});
+ const [loading,setLoading]= useState(false)
   async function renderPage(){
 
     try {
+      setLoading(true);
       let baseURL =`https://swapi.dev/api/starships/${id}`
       const response = await fetch(`${baseURL}`)
       const data = await  response.json();
-      
+    
       setShip(data)
-      console.log(ship)
+      setLoading(false)
+   
     } catch (error) {
       console.log(error)
     }
@@ -29,26 +32,28 @@ export default function CardPage(){
     })
     return src
   }
-console.log(renderImage())
+  renderImage()
+  
     useEffect(()=>{
       renderPage()
     },[])
   return(<div className="card-page">
-     
-  <div className="card-profile">
+ 
+    {loading ? (<p className="loading">Loading ....</p>):( <div className="card-profile">
    
-  <img src={src} alt="" className="card-page-img"/>
-      <ul className="card-page-description">
-    <li>{ship.name}</li>
-    <li>{ship.model}</li>
-    <li>{ship.manufacturer}</li>
-    <li>{ship.length}</li>
-    <li>{ship.cargo_capacity}</li>
-    <li>{ship.passengers}</li>
-    <li>{ship.crew}</li>
-    <li>{ship.created}</li>
-      </ul>
+   <img src={src} alt="" className="card-page-img"/>
+       <ul className="card-page-description">
+     <li><span className="span1">Name::</span>{ship.name}</li>
+     <li><span className="span1">Model::</span>{ship.model}</li>
+     <li><span className="span1">Manufacturer::</span>{ship.manufacturer}</li>
+     <li><span className="span1">Length::</span>{ship.length}</li>
+     <li><span className="span1">Cargo-Capacity::</span>{ship.cargo_capacity}</li>
+     <li><span className="span1">Passengers:</span>{ship.passengers}</li>
+     <li><span className="span1">Crew::</span>{ship.crew}</li>
 
-  </div>
+       </ul>
+ 
+   </div>)}
+
   </div>)
 }

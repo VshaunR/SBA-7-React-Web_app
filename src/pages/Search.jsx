@@ -5,7 +5,8 @@ export default function Search(){
 
 const [searchTerm,setSearchTerm] = useState("");
 const [searchCate, setSearchCate]= useState("");
-const [searchData,setSearchData]= useState([])
+const [searchData,setSearchData]= useState([]);
+const [loading,setLoading]= useState(false)
 function handleSearchCate(e){
   e.preventDefault()
   setSearchCate(e.target.value)
@@ -21,6 +22,7 @@ function handleSearchCate(e){
     e.preventDefault()
      
     try {
+      setLoading(true)
       let arr=[]
       
       let url = `https://swapi.dev/api/${searchCate}/?search=${searchTerm}`
@@ -33,7 +35,7 @@ function handleSearchCate(e){
         setSearchData(arr)
         let str=""
        setSearchTerm(str)
-       
+       setLoading(false)
     } catch (e) {
         console.error(e)
     }
@@ -56,7 +58,6 @@ function handleSearchCate(e){
           <option value="films">Films</option>
           <option value="starships">StarShips</option>
           <option value="vehicles">Vehicles</option>
-          <option value="species">Species</option>
           <option value="planets">Planets</option>
         </select>
        
@@ -65,7 +66,7 @@ function handleSearchCate(e){
         
       </form>
       <hr></hr>
-         {searchData !==null ? (list):(<h1>loading</h1>)}
+         {loading ? (<p className="loading">loading</p>):(list)}
              
   </div>)
 }

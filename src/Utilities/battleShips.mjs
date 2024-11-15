@@ -1,39 +1,39 @@
 const battleShips= [
   {
     name:'CR90 corvette',
-    src:'/public/CR90 corvette.webp'
+    src:'/CR90 corvette.webp'
   },
   {
     name:'Star Destroyer',
-    src:'/public/Star Destroyer.jpg'
+    src:'/Star Destroyer.jpg'
   },
   {
     name:'Sentinel-class landing craft',
-    src:'/public/Sentinel-class landing craft.jpg'
+    src:'/Sentinel-class landing craft.jpg'
   },
   {
     name:'Death Star',
-    src:'/public/Death Star.webp'
+    src:'/Death Star.webp'
   },
   {
     name:'Millennium Falcon',
-    src:'/public/Millennium Falcon.jpg'
+    src:'/Millennium Falcon.jpg'
   },
   {
     name:'Y-wing',
-    src:'/public/Y-wing.jpeg'
+    src:'/Y-wing.jpeg'
   },
   {
     name:'X-wing',
-    src:'/public/X-wing.jpeg'
+    src:'/X-wing.jpeg'
   },
   {
     name:'TIE Advanced x1',
-    src:'/public/TIE Advanced x1.webp'
+    src:'/TIE Advanced x1.webp'
   },
     {
     name:'Executor',
-    src:'/public/Executor.webp'
+    src:'/Executor.webp'
   }
 ]
 

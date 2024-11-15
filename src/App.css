@@ -23,17 +23,20 @@ p{
   display: flex;
   flex-direction: column;
   border: 5px solid rgb(133, 38, 38);
-  max-width: 25%;
-  min-width: 15%;
+  
+  min-width: 25%;
   padding: 1rem;
   border-radius: 20px;
   box-shadow: 9px 4px 50px rgb(138, 27, 27);
   flex: 1;
-  background-color: rgb(229, 238, 144);
+  background-color: rgb(227, 235, 160);
   margin: 1rem;
 }
 .card-page{
   display: flex;
+}
+.click{
+  color: #201919;
 }
 .card-profile{
   display: flex;
@@ -58,7 +61,7 @@ p{
   gap: 55px;
 }
 .header>a{
-  color:#ce9393;;
+  color:#ce2222;;
   text-decoration: none;
   font-weight: bold;
   font-family:'Star Wars' ;
@@ -68,6 +71,9 @@ p{
 }
 .span{
   font-weight: bold;
+}
+.span1{
+ color: rebeccapurple;
 }
 .search{
 margin: 1rem;
@@ -119,4 +125,21 @@ padding: 1rem;
   border-radius: 10px;
   border: solid 2px rgb(133, 38, 38) ;
   box-shadow: 8px 6px 50px  rgb(47, 10, 82);
+}
+.loading{
+  font-size: 3rem;
+  font-family: "star wars";
+  color: white;
+}
+a{
+ 
+  color: rgb(233, 0, 0);
+  border-radius: 10px;
+  
+  font-family: "star wars";
+  font-weight: bold;
+  
+}
+.card-url:hover{
+ 
 }

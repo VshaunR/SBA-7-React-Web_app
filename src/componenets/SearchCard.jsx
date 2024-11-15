@@ -6,15 +6,15 @@ export default function SearchCard({data,category,term}){
 
   function render(category){
 
-    switch(category){
-      case "people":
-        return (<div className="card">
+  switch(category){
+    case "people":
+        return ( (<div className="card">
           <h1>{category}</h1>
           <h1 className="card-name"><span className="span"></span>{data.name}</h1>
           <p className="card-model"><span className="span">Date Of Birth: </span>{data.birth_year}</p>
           <p className="card-url"><span className="span">Gender: </span>{data.gender}</p>
           <p  className="card-class"><span className="span">Featured In: </span>{data.films}</p>
-          </div>)
+          </div>))
         case "starships":
           return   (<div className="card">
             <h1>{category}</h1>
@@ -49,22 +49,25 @@ export default function SearchCard({data,category,term}){
               <p className="card-url"><span className="span">Total-Crew:</span>{data.crew}</p>
               <p className="card-class"><span className="span">Class:</span>{data.vehicle_class}</p>
               </div>)
+
+             case null:
+              return <h1>Nothing here but us chickens</h1> 
             default:
               <h1>Loading...</h1>
 
     }
     
-
+  }
   
        
         
             
-  }
+  
 
 
   return (<>
   
-      {data !==null?(render(category)):(<h1>Loading</h1>)}
+      {data !==undefined?(render(category)):(<p className="loading">Data Does Not Exist</p>)}
   
   </>)
 }
