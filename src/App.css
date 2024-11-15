@@ -4,6 +4,9 @@ body{
   font-family: sans-serif;
   background-color: #222;
 }
+p{
+  padding: 0;
+}
 .container{
   display: grid;
   grid-template-columns: 1fr;
@@ -13,19 +16,20 @@ body{
 .home{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 20px;
 }
 .card{
   display: flex;
   flex-direction: column;
-  border: 1px solid gainsboro;
+  border: 5px solid rgb(133, 38, 38);
   max-width: 25%;
+  min-width: 15%;
   padding: 1rem;
   border-radius: 20px;
-  box-shadow: 9px 4px 5px gray;
+  box-shadow: 9px 4px 50px rgb(138, 27, 27);
   flex: 1;
-  background-color: azure;
+  background-color: rgb(229, 238, 144);
   margin: 1rem;
 }
 .card-page{
@@ -42,23 +46,77 @@ body{
   flex: 1;
 }
 .card-page-img{
-  width: 40%;
+
 }
 .header{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 2rem;
   background-color: rgb(0, 0, 0);
   width: 100%;
-  
+  gap: 55px;
 }
 .header>a{
-  color:#fff;;
+  color:#ce9393;;
   text-decoration: none;
   font-weight: bold;
   font-family:'Star Wars' ;
 }
 .card-name,.card-model{
   font-family:'Star Wars' ;
+}
+.span{
+  font-weight: bold;
+}
+.search{
+margin: 1rem;
+padding: 1rem;
+width: 250px;
+border-radius: 20px;
+box-shadow: 8px 6px 50px  rgb(47, 10, 82);
+border:solid 3px rgb(229, 238, 144) ;
+font-family: "star wars";
+}
+.select{
+  margin: 1rem;
+  padding: 1rem;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 8px 6px 50px  rgb(47, 10, 82);
+  border:solid 3px rgb(229, 238, 144) ;
+  font-family: "star wars";
+}
+.search-form{
+background-color: rgba(9, 136, 130, 0.329);
+width: 100%;
+margin: 0;
+border-radius: 10px;
+padding: 1rem;
+
+}
+.search-btn{
+  margin: 1rem;
+  padding: 1rem;
+  color: blue;
+  font-size: 1rem;
+  font-family: "star wars";
+  border-radius: 20px;
+  box-shadow: 8px 6px 50px  rgb(47, 10, 82);
+  border:solid 3px rgb(229, 238, 144) ;
+}
+
+.card-page-description{
+  font-family: "star wars";
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: rgb(229, 238, 144) ;
+  list-style: none;
+}
+.card-page-img{
+  width: 40%;
+  border-radius: 10px;
+  border: solid 2px rgb(133, 38, 38) ;
+  box-shadow: 8px 6px 50px  rgb(47, 10, 82);
 }

@@ -5,7 +5,7 @@ import Nav from './componenets/Nav';
 import About from './pages/About';
 import  Contact   from './pages/Contact';
 import CardPage from './componenets/CardPage';
-import Search from './componenets/Search';
+import Search from './pages/Search';
 import './App.css'
 
 function App() {
@@ -20,8 +20,7 @@ function App() {
       <Routes>
         <Route path='/'element={<Home/>}/>
         <Route path='/cardPage/:id'element={<CardPage/>}/>
-        <Route path='/about' element={<About/>} />
-        <Route path='/contact' element={<Contact/>}/>
+      
         <Route path='/search' element={<Search/>}/>
 
       </Routes>

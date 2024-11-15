@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchCard from "./SearchCard";
+import SearchCard from "../componenets/SearchCard";
 export default function Search(){
 
 
@@ -7,6 +7,7 @@ const [searchTerm,setSearchTerm] = useState("");
 const [searchCate, setSearchCate]= useState("");
 const [searchData,setSearchData]= useState([])
 function handleSearchCate(e){
+  e.preventDefault()
   setSearchCate(e.target.value)
 
 }
@@ -32,7 +33,7 @@ function handleSearchCate(e){
         setSearchData(arr)
         let str=""
        setSearchTerm(str)
-     
+       
     } catch (e) {
         console.error(e)
     }
@@ -40,14 +41,16 @@ function handleSearchCate(e){
   }
 
  let list = searchData.map((data)=>{
-    return <SearchCard category={searchCate} data={data}/>
+    return <SearchCard category={searchCate} data={data} term ={searchTerm}/>
 })
  
   return(<div>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="search" id="searchTerm" value={searchTerm} onChange={handleChange}/>
-        <select onChange={handleSearchCate} defaultValue={'DEFAULT'}>
+      <form onSubmit={handleSubmit} className="search-form">
+        <input type="text" name="search" id="searchTerm" className="search"value={searchTerm} onChange={handleChange}/>
+       
+        
+        <select onChange={handleSearchCate} defaultValue={'DEFAULT'} className="select">
           <option value="DEFAULT" disabled >Choose Category</option>
           <option value="people"  >People</option>
           <option value="films">Films</option>
@@ -56,10 +59,13 @@ function handleSearchCate(e){
           <option value="species">Species</option>
           <option value="planets">Planets</option>
         </select>
-        <input type="submit" value="Search" />
+       
+       
+        <input type="submit" value="Search" className="search-btn"/>
+        
       </form>
-
-         {list !==null ? (list):(<h1>loading</h1>)}
+      <hr></hr>
+         {searchData !==null ? (list):(<h1>loading</h1>)}
              
   </div>)
 }

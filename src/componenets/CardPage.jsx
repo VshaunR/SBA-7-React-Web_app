@@ -38,7 +38,7 @@ console.log(renderImage())
   <div className="card-profile">
    
   <img src={src} alt="" className="card-page-img"/>
-      <ul>
+      <ul className="card-page-description">
     <li>{ship.name}</li>
     <li>{ship.model}</li>
     <li>{ship.manufacturer}</li>

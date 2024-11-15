@@ -7,7 +7,6 @@ export default function Nav(){
     <Link to='/'>Home</Link>
     <Link to='/search'>Search</Link>
  
-    <Link to='/about'>About</Link>
-    <Link to='/contact'>Contact</Link>
+    
   </div>)
 }
