@@ -1,17 +1,17 @@
 import { useState,useEffect } from "react";
-
+import SearchCard from "./SearchCard";
 export default function Search(){
 const [searchTerm,setSearchTerm] = useState("");
 const [searchCate, setSearchCate]= useState("");
 const [searchData,setSearchData]= useState([])
 function handleSearchCate(e){
   setSearchCate(e.target.value)
-  setSearchData([])
+
 }
 console.log(searchCate)
   function handleChange(e){
     setSearchTerm(e.target.value)
-    setSearchData([])
+   
   }
 
  async function handleSubmit(e){
@@ -23,28 +23,27 @@ console.log(searchCate)
       //works, need to have a way to set it from people to starships to vehicles...
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data.results)
-      if(searchData.length >=1){
-        arr =[]
-       
-       }else{
+   
+     
         arr= arr.concat(data.results)
-        setSearchData([...searchData,arr])
-       }
+        setSearchData(arr)
+       
      
     } catch (e) {
         console.error(e)
     }
     
   }
-
-console.log(searchData)
-
+// console.log(searchData)
+ let list = searchData.map((data)=>{
+    return <SearchCard data={data}/>
+})
+ 
   return(<div>
 
       <form onSubmit={handleSubmit}>
         <input type="text" name="search" id="searchTerm" onChange={handleChange}/>
-        <select onClick={handleSearchCate} defaultValue={'DEFAULT'}>
+        <select onChange={handleSearchCate} defaultValue={'DEFAULT'}>
           <option value="DEFAULT" disabled >Choose Category</option>
           <option value="people"  >People</option>
           <option value="films">Films</option>
@@ -56,11 +55,7 @@ console.log(searchData)
         <input type="submit" value="Search" />
       </form>
 
-          <ul>
-            {searchData.map((data)=>{
-              {data.name}
-            })}
-          </ul>
-
+         {list}
+             
   </div>)
 }
