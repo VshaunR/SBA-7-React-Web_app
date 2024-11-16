@@ -1,8 +1,27 @@
-# React + Vite
+# Name 
+React Web Application
+## Technologies
+VS code, Git Github, React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Packages
+React, react-router-dom , react-dom
 
-Currently, two official plugins are available:
+#### Hooks
+useState, useEffect , useRef ,useParams
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##### API
+The SWAPI was used in this application
+
+###### Installation
+git clone https://github.com/VshaunR/SBA-7-React-Web_app.git, npm i , enjoy
+
+
+###### How to use
+The home page has a series of card of starships in the starwars universe
+CLICK on the link on the cards to go to the ships personal page
+
+The search page is used to look up all information available on the SWAPI 
+Choose a category and and appropriate search term
+This could be people-luke
+starships-death star
+
