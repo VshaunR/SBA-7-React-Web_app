@@ -25,3 +25,6 @@ Choose a category and and appropriate search term
 This could be people-luke
 starships-death star
 
+
+###### Reason why I chose SWAPI
+It has a 10,000 request limit per day per user so I could freely test as many api calls as I wanted
